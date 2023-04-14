@@ -28,7 +28,7 @@ We're actively seeking contributors to help improve and expand EcoMoveQuest. If 
 
 ## Support
 
-If you have any questions, suggestions, or need support, feel free to join our [community chat](link-to-chat) or open an issue on GitHub.
+If you have any questions, suggestions, or need support, feel free to join our [community chat](https://discord.gg/V5sAa9RQcx) or open an issue on GitHub.
 
 ## License
 
