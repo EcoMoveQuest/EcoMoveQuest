@@ -1,34 +1,34 @@
 ### Persona: Marta
 
-**Demografía:**
+**Demographics:**
 
-- Edad: 36 años
-- Género: Femenino
-- Ocupación: Arquitecta
-- Ubicación: Colmenarejo, Comunidad de Madrid, España
-- Estado civil: Casada
-- Hijos: Dos hijos, uno de 7 años y otro de 9 años, ambos en el colegio Las Veredas
+- Age: 36 years old
+- Gender: Female
+- Occupation: Architect
+- Location: Colmenarejo, Community of Madrid, Spain
+- Marital status: Married
+- Children: Two children, one 7 years old and one 9 years old, both attending Las Veredas school
 
-**Antecedentes:**
+**Background:**
 
-- Se preocupa por el medio ambiente y busca inculcar valores ecológicos en sus hijos
-- Quiere fomentar hábitos saludables en su familia y en la comunidad escolar, como caminar, ir en bicicleta o patinete en lugar de utilizar el coche siempre que sea posible
-- Está activa en la comunidad escolar como madre y busca formas de involucrar a otras familias en iniciativas ecológicas y sostenibles
+- Cares about the environment and seeks to instill eco-friendly values in her children
+- Wants to promote healthy habits in her family and the school community, such as walking, biking, or using scooters instead of always driving
+- Actively engaged in the school community as a parent, looking for ways to involve other families in eco-friendly and sustainable initiatives
 
-**Objetivos:**
+**Goals:**
 
-- Encontrar un enfoque lúdico y motivador para animar a sus hijos y otros niños a utilizar medios de transporte más ecológicos para ir al colegio Las Veredas
-- Contribuir a un proyecto comunitario que tenga un impacto positivo en el medio ambiente, la salud pública y la educación de los niños sobre la sostenibilidad en Colmenarejo
-- Conectar y colaborar con otras familias y educadores interesados en promover el transporte ecológico y sostenible en la localidad
+- Find a fun and engaging approach to encourage her children and other kids to use greener transportation methods to get to Las Veredas school
+- Contribute to a community project that has a positive impact on the environment, public health, and children's education about sustainability in Colmenarejo
+- Connect and collaborate with other families and educators interested in promoting eco-friendly and sustainable transportation in the town
 
-**Necesidades:**
+**Needs:**
 
-- Una plataforma fácil de usar y atractiva para los niños que integre gamificación y seguimiento de actividades de transporte ecológico al colegio Las Veredas, teniendo en cuenta que la distancia desde el centro del pueblo es de aproximadamente 1,5 km
-- Incentivos y recompensas apropiadas para la edad y adaptadas a los intereses de los niños, que los motiven a comprometerse con el uso de medios de transporte alternativos al coche para ir al colegio
-- Recursos y herramientas para involucrar a la comunidad escolar de Las Veredas y difundir el mensaje de transporte ecológico y sostenible en Colmenarejo, una localidad con alrededor de 9,000 habitantes
+- An easy-to-use and child-friendly platform that integrates gamification and tracking of eco-friendly transportation activities to Las Veredas school, considering that the distance from the town center is approximately 1.5 km
+- Age-appropriate and interest-based incentives and rewards that motivate children to commit to using alternative transportation methods to cars for getting to school
+- Resources and tools to engage the Las Veredas school community and spread the message of eco-friendly and sustainable transportation in Colmenarejo, a town with around 9,000 inhabitants
 
-**Retos:**
+**Challenges:**
 
-- Puede enfrentarse a la resistencia de sus hijos u otros niños que prefieren ir en coche al colegio por comodidad o por temor a ser diferentes
-- Puede tener dificultades para convencer a otros padres y educadores del colegio Las Veredas de la importancia y los beneficios de fomentar el transporte ecológico y sostenible
-- Puede encontrar barreras en Colmenarejo, como infraestructura deficiente para bicicletas o patinetes, que dificulten el uso de medios de transporte alternativos para ir al colegio Las Veredas
+- May face resistance from her children or other kids who prefer to drive to school for convenience or fear of being different
+- May have difficulties convincing other parents and educators at Las Veredas school about the importance and benefits of promoting eco-friendly and sustainable transportation
+- May encounter barriers in Colmenarejo, such as inadequate infrastructure for bikes or scooters, making it difficult to use alternative transportation methods to get to Las Veredas school

@@ -1,33 +1,33 @@
 ### Persona: Álvaro
 
-**Demografía:**
+**Demographics:**
 
-- Edad: 9 años
-- Género: Masculino
-- Relación familiar: Hijo de Marta
-- Ubicación: Colmenarejo, Comunidad de Madrid, España
-- Educación: Estudiante de 4º de Primaria en el colegio Las Veredas
+- Age: 9 years old
+- Gender: Male
+- Family relationship: Marta's son
+- Location: Colmenarejo, Community of Madrid, Spain
+- Education: 4th-grade student at Las Veredas school
 
-**Antecedentes:**
+**Background:**
 
-- Ha crecido en un hogar en el que se promueven valores ecológicos y se busca fomentar hábitos saludables
-- Le gusta pasar tiempo al aire libre, jugar con sus amigos y practicar deportes
-- Tiene cierto interés en la tecnología y los videojuegos, aunque no es su principal pasatiempo
+- Grown up in a household where eco-friendly values are promoted and healthy habits are encouraged
+- Enjoys spending time outdoors, playing with friends, and participating in sports
+- Has some interest in technology and video games, but it's not his main pastime
 
-**Objetivos:**
+**Goals:**
 
-- Participar en actividades divertidas y significativas con sus amigos y compañeros de clase
-- Contribuir a mejorar el medio ambiente y la salud de su comunidad, siguiendo el ejemplo de su madre, Marta
-- Aprender más sobre el impacto del transporte ecológico y sostenible en su entorno
+- Engage in fun and meaningful activities with his friends and classmates
+- Contribute to improving the environment and health of his community, following his mother Marta's example
+- Learn more about the impact of eco-friendly and sustainable transportation on his surroundings
 
-**Necesidades:**
+**Needs:**
 
-- Un enfoque lúdico y atractivo para animarlo a utilizar medios de transporte más ecológicos para ir al colegio Las Veredas, como caminar, ir en bicicleta o patinete
-- Incentivos y recompensas que sean apropiados para su edad e intereses, para motivarlo a comprometerse con el uso de medios de transporte alternativos al coche
-- Actividades y herramientas educativas que le permitan comprender el impacto del transporte ecológico y sostenible en su entorno
+- A playful and engaging approach to encourage him to use greener transportation methods to get to Las Veredas school, such as walking, biking, or using a scooter
+- Incentives and rewards that are age-appropriate and cater to his interests, to motivate him to commit to using alternative transportation methods to cars
+- Educational activities and tools that allow him to understand the impact of eco-friendly and sustainable transportation on his environment
 
-**Retos:**
+**Challenges:**
 
-- Puede encontrar dificultades para cambiar su rutina de transporte al colegio, especialmente si está acostumbrado a ir en coche con sus padres
-- Puede enfrentarse a la resistencia de sus amigos o compañeros de clase que prefieren utilizar el coche por comodidad o por temor a ser diferentes
-- Puede sentirse inseguro al utilizar medios de transporte alternativos, como la bicicleta o el patinete, si la infraestructura de Colmenarejo no es adecuada o si existe un tráfico intenso en las rutas al colegio Las Vered
+- May find it difficult to change his transportation routine to school, especially if he's used to driving with his parents
+- May face resistance from his friends or classmates who prefer to drive for convenience or fear of being different
+- May feel insecure using alternative transportation methods, such as biking or using a scooter, if Colmenarejo's infrastructure is inadequate or if there is heavy traffic on routes to Las Veredas school
