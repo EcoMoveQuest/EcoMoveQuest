@@ -35,19 +35,41 @@
 
    La aplicación debería estar ejecutándose y deberías ver el mensaje "Server running at http://localhost:3000" en la consola.
 
-## 6. Ejecutar el script serial-to-rest
+## 6. Encontrar el puerto serie en uso
+
+1. Abre una ventana de PowerShell y ejecuta el siguiente comando para obtener una lista de los puertos serie disponibles en tu computadora:
+
+       Get-WmiObject -Query "SELECT * FROM Win32_SerialPort"
+
+   Esto te proporcionará información detallada sobre los puertos serie disponibles, incluyendo los nombres de los puertos, como 'COM3' o 'COM4'.
+
+## 7. Cambiar el puerto serie en el script serial-to-rest
+
+1. Abre el archivo `serial-to-rest.ps1` con un editor de texto como Notepad++ o Visual Studio Code.
+2. Busca la línea que contiene lo siguiente:
+
+       $portName = 'COM3'
+
+3. Cambia `'COM3'` al nombre del puerto serie que deseas utilizar según lo identificado en el paso 6. Por ejemplo, si deseas utilizar el puerto COM4, la línea debe ser:
+
+       $portName = 'COM4'
+
+4. Guarda el archivo y cierra el editor de texto.
+
+## 8. Ejecutar el script serial-to-rest
 
 1. Abre una nueva ventana de PowerShell (no cierres la que está ejecutando la aplicación Node.js). Asegúrate de que el script `serial-to-rest.ps1` esté en la carpeta del proyecto `EcoMoveQuest-main`.
-2. Ejecuta el siguiente comando para permitir la ejecución de scripts en PowerShell:
-
-       Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-
-   Confirma que deseas cambiar la política de ejecución cuando se te solicite. Luego, ejecuta el siguiente comando para ejecutar el script `serial-to-rest.ps1`:
+2. Navega a la carpeta del proyecto `EcoMoveQuest-main` utilizando el comando `cd`.
+3. Ejecuta el siguiente comando para ejecutar el script `serial-to-rest.ps1`:
 
        .\serial-to-rest.ps1
 
-   Este script leerá los datos del puerto serie y los enviará al endpoint `/arrivals` de la aplicación Node.js.
+   El script comenzará a leer los datos del puerto serie y los enviará al servidor web local.
 
-## 7. Acceder al sitio web
+## 9. Acceder al sitio web
 
-1. Abre tu navegador web y navega a `http://localhost:3000/forest` para ver el bosque. A medida que el script `serial-to-rest.ps1` envíe colores al endpoint `/arrivals`, puedes actualizar la página `/forest` para ver el bosque actualizado con los árboles agregados.
+1. Abre tu navegador web preferido.
+2. Ve a la dirección [http://localhost:3000](http://localhost:3000).
+3. Deberías ver el sitio web del proyecto EcoMoveQuest en funcionamiento y recibir los datos enviados por el script serial-to-rest.
+
+¡Listo! Ahora tienes el proyecto EcoMoveQuest funcionando en tu computadora con Windows.
