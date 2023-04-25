@@ -56,7 +56,16 @@
 
 4. Guarda el archivo y cierra el editor de texto.
 
-## 8. Ejecutar el script serial-to-rest
+## 8. Habilitar la ejecución de scripts en PowerShell
+
+1. Abre una nueva ventana de PowerShell con privilegios de administrador (haz clic derecho en el icono de PowerShell y selecciona "Ejecutar como administrador").
+2. Ejecuta el siguiente comando para permitir la ejecución de scripts en PowerShell:
+
+       Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+3. Confirma tu selección cuando se te solicite.
+
+## 9. Ejecutar el script serial-to-rest
 
 1. Abre una nueva ventana de PowerShell (no cierres la que está ejecutando la aplicación Node.js). Asegúrate de que el script `serial-to-rest.ps1` esté en la carpeta del proyecto `EcoMoveQuest-main`.
 2. Navega a la carpeta del proyecto `EcoMoveQuest-main` utilizando el comando `cd`.
@@ -66,7 +75,7 @@
 
    El script comenzará a leer los datos del puerto serie y los enviará al servidor web local.
 
-## 9. Acceder al sitio web
+## 10. Acceder al sitio web
 
 1. Abre tu navegador web preferido.
 2. Ve a la dirección [http://localhost:3000](http://localhost:3000).
