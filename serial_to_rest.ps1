@@ -18,10 +18,10 @@ function Read-FromSerialPort {
 }
 
 function Send-ToRestEndpoint {
-    param($color, $time, $endpoint)
+    param($color, $endpoint)
 
     try {
-        $jsonPayload = ConvertTo-Json -Compress -InputObject @{ color = $color; time = $time }
+        $jsonPayload = ConvertTo-Json -Compress -InputObject @{ color = $color}
         $response = Invoke-WebRequest -Uri $endpoint -Method POST -Body $jsonPayload -ContentType "application/json"
         if ($response.StatusCode -eq 200) {
             $responseData = $response.Content | ConvertFrom-Json
@@ -36,7 +36,6 @@ function Send-ToRestEndpoint {
 
 foreach ($data in Read-FromSerialPort -portName $serialPortName -baudRate $baudRate) {
     $color = $data.Trim()
-    $currentTime = Get-Date -Format "yyyy-MM-ddTHH:mm:ss.fffK"
-    Send-ToRestEndpoint -color $color -time $currentTime -endpoint $restEndpoint
+    Send-ToRestEndpoint -color $color -endpoint $restEndpoint
     Start-Sleep -Seconds 1  # Adjust the sleep time as needed
 }

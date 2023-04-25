@@ -37,17 +37,17 @@ function createAsciiTree(color) {
 
 app.post('/arrivals', (req, res) => {
   const color = req.body.color;
-  const time = req.body.time;
 
-  if (!color || !time) {
-    res.status(400).json({ error: 'Invalid input. Please provide a color and a time.' });
+  if (!color) {
+    res.status(400).json({ error: 'Invalid input. Please provide a color.' });
   } else {
     const hexColor = colorNameToHex(color);
     if (hexColor) {
       const newTree = createAsciiTree(color);
       forest.push(newTree);
-      console.log(`Received color: ${hexColor} at ${time}. Added a new ${color} tree to the forest.`);
-      res.status(200).json({ message: `Color received at ${time}.`, color: hexColor, tree: newTree.tree });
+      const currentTime = new Date().toISOString();
+      console.log(`Received color: ${hexColor} at ${currentTime}. Added a new ${color} tree to the forest.`);
+      res.status(200).json({ message: `Color received at ${currentTime}.`, color: hexColor, tree: newTree.tree });
     } else {
       res.status(400).json({ error: `Invalid color name: ${color}. Please provide a basic color name.` });
     }
