@@ -39,7 +39,7 @@
 
 1. Abre una ventana de PowerShell y ejecuta el siguiente comando para obtener una lista de los puertos serie disponibles en tu computadora:
 
-       Get-WmiObject -Query "SELECT * FROM Win32_SerialPort"
+        [System.IO.Ports.SerialPort]::getportnames()
 
    Esto te proporcionará información detallada sobre los puertos serie disponibles, incluyendo los nombres de los puertos, como 'COM3' o 'COM4'.
 
