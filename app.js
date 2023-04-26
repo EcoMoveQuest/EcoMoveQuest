@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = 3000;
@@ -56,7 +57,7 @@ app.post('/arrivals', (req, res) => {
 });
 
 app.get('/forest', (req, res) => {
-  res.json(forest);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
