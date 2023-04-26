@@ -48,11 +48,11 @@
 1. Abre el archivo `serial-to-rest.ps1` con un editor de texto como Notepad++ o Visual Studio Code.
 2. Busca la línea que contiene lo siguiente:
 
-       $portName = 'COM3'
-
-3. Cambia `'COM3'` al nombre del puerto serie que deseas utilizar según lo identificado en el paso 6. Por ejemplo, si deseas utilizar el puerto COM4, la línea debe ser:
-
        $portName = 'COM4'
+
+3. Cambia `'COM4'` al nombre del puerto serie que deseas utilizar según lo identificado en el paso 6. Por ejemplo, si deseas utilizar el puerto COM3, la línea debe ser:
+
+       $portName = 'COM3'
 
 4. Guarda el archivo y cierra el editor de texto.
 
