@@ -78,7 +78,7 @@
 ## 10. Acceder al sitio web
 
 1. Abre tu navegador web preferido.
-2. Ve a la dirección [http://localhost:3000](http://localhost:3000).
+2. Ve a la dirección [http://localhost:3000/forest](http://localhost:3000/forest).
 3. Deberías ver el sitio web del proyecto EcoMoveQuest en funcionamiento y recibir los datos enviados por el script serial-to-rest.
 
 ¡Listo! Ahora tienes el proyecto EcoMoveQuest funcionando en tu computadora con Windows.
