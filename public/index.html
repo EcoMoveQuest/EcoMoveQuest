@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest</title>
+  <style>
+    body {
+      font-family: monospace;
+      white-space: pre;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .tree {
+      width: 100px;
+    }
+  </style>
+  <script>
+    async function loadForest() {
+      const response = await fetch('/forest');
+      const forest = await response.json();
+      const container = document.getElementById('forestContainer');
+
+      for (const tree of forest) {
+        const svgResponse = await fetch('tree.svg');
+        const svgText = await svgResponse.text();
+        const parser = new DOMParser();
+        const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+        const pathToModify = svgDoc.querySelector('g > path:nth-child(3)');
+        pathToModify.setAttribute('fill', tree.color);
+
+        const treeDiv = document.createElement('div');
+        treeDiv.className = 'tree';
+        treeDiv.appendChild(svgDoc.documentElement);
+        container.appendChild(treeDiv);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadForest();
+    });
+  </script>
+</head>
+<body>
+  <div id="forestContainer"></div>
+</body>
+</html>

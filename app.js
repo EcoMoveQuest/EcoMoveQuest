@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 
 const app = express();
 const port = 3000;
@@ -25,15 +24,10 @@ function colorNameToHex(color) {
   return colorMap[color.toLowerCase()];
 }
 
-function createAsciiTree(color) {
-  const treeTop = color === 'white' ? 'O' : '*';
+function createTree(color) {
+  const hexColor = colorNameToHex(color);
   return {
-    color: color,
-    tree: `
-  ${treeTop}  
- /|\\ 
-  |  
-`
+    color: hexColor
   };
 }
 
@@ -45,11 +39,11 @@ app.post('/arrivals', (req, res) => {
   } else {
     const hexColor = colorNameToHex(color);
     if (hexColor) {
-      const newTree = createAsciiTree(color);
+      const newTree = createTree(color);
       forest.push(newTree);
       const currentTime = new Date().toISOString();
       console.log(`Received color: ${hexColor} at ${currentTime}. Added a new ${color} tree to the forest.`);
-      res.status(200).json({ message: `Color received at ${currentTime}.`, color: hexColor, tree: newTree.tree });
+      res.status(200).json({ message: `Color received at ${currentTime}.`, color: hexColor, tree: newTree });
     } else {
       res.status(400).json({ error: `Invalid color name: ${color}. Please provide a basic color name.` });
     }
@@ -57,7 +51,7 @@ app.post('/arrivals', (req, res) => {
 });
 
 app.get('/forest', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.json(forest);
 });
 
 app.listen(port, () => {
