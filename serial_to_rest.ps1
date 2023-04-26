@@ -1,41 +1,45 @@
-$serialPortName = "COM3"  # Replace with your serial port
+# Serial port settings
+$portName = "COM4" # Replace with your serial port name
 $baudRate = 9600
-$restEndpoint = "http://localhost:3000/arrivals"
+$dataBits = 8
+$parity = "None"
+$stopBits = "One"
+$endpointUrl = "https://localhost:3000/arrivals" # Replace with your REST endpoint URL
 
-function Read-FromSerialPort {
-    param($portName, $baudRate)
+# Open serial port
+$serialPort = New-Object System.IO.Ports.SerialPort -ArgumentList @($portName, $baudRate, $parity, $dataBits, $stopBits)
+$serialPort.ReadTimeout = 1000
+$serialPort.Open()
 
-    $serialPort = New-Object System.IO.Ports.SerialPort($portName, $baudRate)
-    $serialPort.Open()
-
-    while ($true) {
-        $data = $serialPort.ReadLine()
-        if ($data) {
-            $data
-        }
-    }
-    $serialPort.Close()
-}
-
-function Send-ToRestEndpoint {
-    param($color, $endpoint)
+# Function to send color to the endpoint
+function SendColorToEndpoint($color) {
+    $body = @{
+        color = $color
+    } | ConvertTo-Json
 
     try {
-        $jsonPayload = ConvertTo-Json -Compress -InputObject @{ color = $color}
-        $response = Invoke-WebRequest -Uri $endpoint -Method POST -Body $jsonPayload -ContentType "application/json"
-        if ($response.StatusCode -eq 200) {
-            $responseData = $response.Content | ConvertFrom-Json
-            Write-Host "Color sent successfully: $color"
-        } else {
-            Write-Host "Failed to send color: $color. Response status: $($response.StatusCode)"
-        }
+        $response = Invoke-WebRequest -Uri $endpointUrl -Method POST -ContentType "application/json" -Body $body
+        Write-Host "Sent color: $color - Response: $($response.StatusCode) $($response.StatusDescription)"
     } catch {
-        Write-Host "Error sending color: $color. Error: $($_.Exception.Message)"
+        Write-Host "Error sending color: $color - $($_.Exception.Message)"
     }
 }
 
-foreach ($data in Read-FromSerialPort -portName $serialPortName -baudRate $baudRate) {
-    $color = $data.Trim()
-    Send-ToRestEndpoint -color $color -endpoint $restEndpoint
-    Start-Sleep -Seconds 1  # Adjust the sleep time as needed
+try {
+    while ($true) {
+        try {
+            $color = $serialPort.ReadLine().Trim()
+            SendColorToEndpoint($color)
+        } catch [System.TimeoutException] {
+            Write-Host "Read timeout, continuing..."
+        } catch {
+            Write-Host "Error reading data from the serial port: $($_.Exception.Message)"
+            break
+        }
+    }
+} finally {
+    if ($serialPort.IsOpen) {
+        $serialPort.Close()
+        Write-Host "Serial port closed."
+    }
 }

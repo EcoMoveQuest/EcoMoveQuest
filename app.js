@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 let forest = [];
 
@@ -55,29 +56,7 @@ app.post('/arrivals', (req, res) => {
 });
 
 app.get('/forest', (req, res) => {
-  let htmlForest = forest.map(tree => `<pre style="color:${tree.color};">${tree.tree}</pre>`).join('');
-
-  let htmlPage = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forest</title>
-  <style>
-    body {
-      font-family: monospace;
-      white-space: pre;
-    }
-  </style>
-</head>
-<body>
-  ${htmlForest}
-</body>
-</html>
-  `;
-
-  res.send(htmlPage);
+  res.json(forest);
 });
 
 app.listen(port, () => {
