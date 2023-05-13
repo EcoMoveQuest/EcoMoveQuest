@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const WebSocket = require('ws');
 
 const app = express();
 const port = 3000;
@@ -9,27 +10,8 @@ app.use(express.static('public'));
 
 let forest = [];
 
-function colorNameToHex(color) {
-  const colorMap = {
-    red: '#FF0000',
-    green: '#008000',
-    blue: '#0000FF',
-    yellow: '#FFFF00',
-    cyan: '#00FFFF',
-    magenta: '#FF00FF',
-    white: '#FFFFFF',
-    black: '#000000'
-  };
-
-  return colorMap[color.toLowerCase()];
-}
-
-function createTree(color) {
-  const hexColor = colorNameToHex(color);
-  return {
-    color: hexColor
-  };
-}
+// Create WebSocket server on the same port
+const wss = new WebSocket.Server({ noServer: true });
 
 app.post('/arrivals', (req, res) => {
   const color = req.body.color;
@@ -37,16 +19,19 @@ app.post('/arrivals', (req, res) => {
   if (!color) {
     res.status(400).json({ error: 'Invalid input. Please provide a color.' });
   } else {
-    const hexColor = colorNameToHex(color);
-    if (hexColor) {
-      const newTree = createTree(color);
-      forest.push(newTree);
       const currentTime = new Date().toISOString();
-      console.log(`Received color: ${hexColor} at ${currentTime}. Added a new ${color} tree to the forest.`);
-      res.status(200).json({ message: `Color received at ${currentTime}.`, color: hexColor, tree: newTree });
-    } else {
-      res.status(400).json({ error: `Invalid color name: ${color}. Please provide a basic color name.` });
-    }
+      const newTree = {color: color, time: currentTime};
+      forest.push(newTree);
+      console.log(`Received color: ${color} at ${currentTime}. Added a new ${color} tree to the forest.`);
+      
+      // Broadcast the new tree to all connected WebSocket clients
+      wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify(newTree));
+        }
+      });
+
+      res.status(200).json({ message: `Color received at ${currentTime}.`, color: color, tree: newTree });
   }
 });
 
@@ -54,6 +39,13 @@ app.get('/forest', (req, res) => {
   res.json(forest);
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
+});
+
+// Handle upgrades of the request to the WebSocket protocol
+server.on('upgrade', (request, socket, head) => {
+  wss.handleUpgrade(request, socket, head, (ws) => {
+    wss.emit('connection', ws, request);
+  });
 });
