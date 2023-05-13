@@ -18,7 +18,7 @@ function SendColorToEndpoint($color) {
     } | ConvertTo-Json
 
     try {
-        $response = Invoke-WebRequest -Uri "http://localhost:3000/arrivals" -Method POST -ContentType "application/json" -Body $body
+        $response = Invoke-WebRequest -Uri "https://comfortable-toad-swimsuit.cyclic.app/arrivals" -Method POST -ContentType "application/json" -Body $body
         Write-Host "Sent color: $color - Response: $($response.StatusCode) $($response.StatusDescription)"
     }catch {
         Write-Host "Error sending color: $color - $($_.Exception.Message)"
