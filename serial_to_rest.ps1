@@ -4,7 +4,6 @@ $baudRate = 9600
 $dataBits = 8
 $parity = "None"
 $stopBits = "One"
-$endpointUrl = "https://localhost:3000/arrivals" # Replace with your REST endpoint URL
 
 # Open serial port
 $serialPort = New-Object System.IO.Ports.SerialPort -ArgumentList @($portName, $baudRate, $parity, $dataBits, $stopBits)
