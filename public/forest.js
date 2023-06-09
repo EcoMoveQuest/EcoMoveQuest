@@ -93,7 +93,7 @@ function startPolling() {
 function updateDataContainer() {
     let treeDayCO2Count = document.getElementById('forestContainer').children.length * 20;
 
-    document.getElementById('dataContainer').textContent = '!Hemos ahorrado el equivalente al CO2 que ' + treeDayCO2Count + ' arboles absorben en un dia!';
+    document.getElementById('dataContainer').textContent = '¡Hemos ahorrado el equivalente al CO2 que ' + treeDayCO2Count + ' arboles absorben en un dia!';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
