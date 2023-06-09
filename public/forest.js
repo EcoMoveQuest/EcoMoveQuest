@@ -1,24 +1,14 @@
 const colorMap = {
     'red': 'rgba(255, 0, 0, 0.2)',
     'green': 'rgba(0, 255, 0, 0.2)',
-    'blue': 'rgba(0, 0, 255, 0.2)',
-    'yellow': 'rgba(255, 255, 0, 0.2)',
-    'purple': 'rgba(255, 0, 255, 0.2)',
-    'orange': 'rgba(255, 165, 0, 0.2)',
-    'brown': 'rgba(139, 69, 19, 0.2)',
-    'black': 'rgba(0, 0, 0, 0.2)',
-    'white': 'rgba(255, 255, 255, 0.2)',
-    'gray': 'rgba(128, 128, 128, 0.2)',
-    'pink': 'rgba(255, 192, 203, 0.2)',
-    'cyan': 'rgba(0, 255, 255, 0.2)',
-    'lime': 'rgba(0, 255, 0, 0.2)'
+    'blue': 'rgba(0, 0, 255, 0.2)'
 };
 
 const milestoneSet = new Set([10, 25, 50, 100, 250, 500, 1000]);
 
-const animals = ['🐶', '🐱', '🐭', /* ... other animals */];
+const animals = ['🐶', '🐱', '🐭'];
 
-const colors = ['red', 'green', 'blue', /* ... other colors */];
+const colors = ['red', 'green', 'blue'];
 
 function setColor(div, color) {
     div.style.backgroundColor = colorMap[color] || 'rgba(255, 255, 255, 0.2)';
@@ -81,12 +71,12 @@ async function loadTreesFromServer() {
 }
 
 function updateDataContainer() {
-    let treeDayCO2Count = document.getElementById('forestContainer').children.length * 10;
+    let treeDayCO2Count = document.getElementById('forestContainer').children.length * 20;
 
     document.getElementById('dataContainer').textContent = '!Hemos ahorrado el equivalente al CO2 que ' + treeDayCO2Count + ' arboles absorben en un dia!';
 }
 
-const socket = new WebSocket('ws://localhost:3000');
+const socket = new WebSocket('ws://comfortable-toad-swimsuit.cyclic.app');
 
 socket.onopen = function () {
     console.log('Connection established');
